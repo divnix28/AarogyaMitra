@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+- story: Disease symptoms then prevention path
+  steps:
+  - intent: greeting
+  - action: utter_greeting
+  - intent: symptoms
+    user: "What are the symptoms of dengue?"
+  - action: action_route_nlu_payload
+  - intent: prevention
+    user: "How can I prevent it?"
+  - action: action_route_nlu_payload
+
+- story: Emergency escalation path
+  steps:
+  - intent: emergency
+    user: "Patient is unconscious and having severe chest pain"
+  - action: action_handle_emergency

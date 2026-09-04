@@ -1,0 +1,107 @@
+version: "3.1"
+
+intents:
+  - greeting
+  - goodbye
+  - thanks
+  - help
+  - language_change
+  - health_information
+  - disease_information
+  - symptoms
+  - causes
+  - prevention
+  - treatment_information
+  - vaccination_information
+  - vaccine_schedule
+  - vaccine_safety
+  - maternal_health
+  - pregnancy_information
+  - child_health
+  - nutrition_information
+  - government_scheme
+  - healthcare_facility
+  - misconception
+  - teach_back
+  - emergency
+  - urgent_symptoms
+
+entities:
+  - disease
+  - symptom
+  - vaccine
+  - age_group
+  - population_group
+  - pregnancy_status
+  - location
+  - government_scheme
+  - language
+  - health_condition
+
+slots:
+  disease:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: disease
+
+  symptom:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: symptom
+
+  vaccine:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: vaccine
+
+  language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: language
+
+  emergency_flag:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+responses:
+  utter_greeting:
+    - text: "Namaste! I am AarogyaMitra. How can I assist you with health information today?"
+    - text: "नमस्ते! मैं आरोग्यमित्र हूँ। मैं आपकी क्या मदद कर सकता हूँ?"
+
+  utter_goodbye:
+    - text: "Stay healthy and safe! Reach out anytime if you have health questions."
+    - text: "स्वस्थ रहें, सुरक्षित रहें!"
+
+  utter_thanks:
+    - text: "You are welcome! Let me know if you need anything else."
+    - text: "आपका स्वागत है!"
+
+  utter_help:
+    - text: "You can ask me questions about diseases, symptoms, prevention, vaccine schedules, pregnancy care, or public health schemes."
+
+  utter_ask_clarification:
+    - text: "Are you asking about the symptoms, prevention methods, or treatment guidance for this topic?"
+
+  utter_fallback:
+    - text: "I want to ensure I provide accurate guidance. Could you rephrase your question or specify if you need details on symptoms, prevention, or government health schemes?"
+
+  utter_emergency_escalation:
+    - text: "CRITICAL: You may be experiencing urgent symptoms. Please visit the nearest hospital or contact Emergency Ambulance Services at 108 immediately."
+
+actions:
+  - action_route_nlu_payload
+  - action_handle_emergency
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

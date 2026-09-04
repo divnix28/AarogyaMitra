@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-disease",
+      "2": "I-disease",
+      "3": "L-disease",
+      "4": "U-disease",
+      "5": "B-government_scheme",
+      "6": "I-government_scheme",
+      "7": "L-government_scheme",
+      "8": "U-government_scheme",
+      "9": "B-symptom",
+      "10": "I-symptom",
+      "11": "L-symptom",
+      "12": "U-symptom",
+      "13": "B-vaccine",
+      "14": "I-vaccine",
+      "15": "L-vaccine",
+      "16": "U-vaccine",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-disease": 1,
+      "I-disease": 2,
+      "L-disease": 3,
+      "U-disease": 4,
+      "B-government_scheme": 5,
+      "I-government_scheme": 6,
+      "L-government_scheme": 7,
+      "U-government_scheme": 8,
+      "B-symptom": 9,
+      "I-symptom": 10,
+      "L-symptom": 11,
+      "U-symptom": 12,
+      "B-vaccine": 13,
+      "I-vaccine": 14,
+      "L-vaccine": 15,
+      "U-vaccine": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]
