@@ -1,0 +1,32 @@
+version: "3.1"
+
+rules:
+- rule: Respond to greeting
+  steps:
+  - intent: greeting
+  - action: utter_greeting
+
+- rule: Respond to goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- rule: Respond to help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- rule: Handle Emergency Immediately
+  steps:
+  - intent: emergency
+  - action: action_handle_emergency
+
+- rule: Fallback rule for low confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_fallback

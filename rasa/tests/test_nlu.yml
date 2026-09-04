@@ -1,0 +1,17 @@
+version: "3.1"
+
+nlu:
+- intent: symptoms
+  examples: |
+    - What are dengue symptoms?
+    - dengu ke symptoms kya hai?
+    - tb ke lakshan batao
+
+- intent: prevention
+  examples: |
+    - How to prevent malaria?
+    - dengue se kaise bache?
+
+- intent: emergency
+  examples: |
+    - Patient has severe chest pain and cannot breathe
