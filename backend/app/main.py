@@ -4,6 +4,7 @@ from typing import Optional, List
 import datetime
 from app.database.connection import engine
 from app.models.learning import Base
+from app.services.chat_service import process_chat_pipeline
 
 app = FastAPI(
     title="AarogyaMitra AI Core Backend",
@@ -34,7 +35,5 @@ async def health_check():
 
 @app.post("/api/v1/chat/message", response_model=ChatResponse)
 async def process_chat_message(request: ChatRequest):
-    return ChatResponse(
-        message=f"Received on {request.channel}. AI engine integration pending.",
-        action="mock_response"
-    )
+    pipeline_result = process_chat_pipeline(request)
+    return ChatResponse(**pipeline_result)
