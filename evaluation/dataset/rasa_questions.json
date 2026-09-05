@@ -17,7 +17,7 @@
     "expected_entities": [
       {
         "entity": "disease",
-        "value": "dengu"
+        "value": "dengue"
       }
     ]
   },

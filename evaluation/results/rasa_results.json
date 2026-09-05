@@ -6,12 +6,12 @@
     "accuracy": 100.0
   },
   "entity_evaluation": {
-    "true_positives": 3,
-    "false_positives": 1,
-    "false_negatives": 2,
-    "precision": 75.0,
-    "recall": 60.0,
-    "f1_score": 66.67
+    "true_positives": 4,
+    "false_positives": 0,
+    "false_negatives": 1,
+    "precision": 100.0,
+    "recall": 80.0,
+    "f1_score": 88.89
   },
   "results": [
     {
@@ -55,7 +55,7 @@
       "expected_entities": [
         {
           "entity": "disease",
-          "value": "dengu"
+          "value": "dengue"
         }
       ],
       "predicted_entities": [
@@ -71,10 +71,10 @@
           ]
         }
       ],
-      "entity_true_positive": 0,
-      "entity_false_positive": 1,
-      "entity_false_negative": 1,
-      "entity_correct": false
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
     },
     {
       "id": 3,
