@@ -1,8 +1,18 @@
 {
   "total_questions": 6,
-  "correct_intents": 6,
-  "incorrect_intents": 0,
-  "intent_accuracy_percent": 100.0,
+  "intent_evaluation": {
+    "correct": 6,
+    "incorrect": 0,
+    "accuracy": 100.0
+  },
+  "entity_evaluation": {
+    "true_positives": 3,
+    "false_positives": 1,
+    "false_negatives": 2,
+    "precision": 75.0,
+    "recall": 60.0,
+    "f1_score": 66.67
+  },
   "results": [
     {
       "id": 1,
@@ -11,13 +21,29 @@
       "predicted_intent": "symptoms",
       "intent_confidence": 0.9998601675033569,
       "intent_correct": true,
-      "entities": [
+      "expected_entities": [
         {
           "entity": "disease",
-          "value": "dengue",
-          "confidence": 0.9995595216751099
+          "value": "dengue"
         }
-      ]
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 9,
+          "end": 15,
+          "confidence_entity": 0.9995595216751099,
+          "value": "dengue",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
     },
     {
       "id": 2,
@@ -26,13 +52,29 @@
       "predicted_intent": "symptoms",
       "intent_confidence": 0.9999228715896606,
       "intent_correct": true,
-      "entities": [
+      "expected_entities": [
         {
           "entity": "disease",
-          "value": "dengue",
-          "confidence": 0.9991341829299927
+          "value": "dengu"
         }
-      ]
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 0,
+          "end": 5,
+          "confidence_entity": 0.9991341829299927,
+          "value": "dengue",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 0,
+      "entity_false_positive": 1,
+      "entity_false_negative": 1,
+      "entity_correct": false
     },
     {
       "id": 3,
@@ -41,7 +83,17 @@
       "predicted_intent": "symptoms",
       "intent_confidence": 0.9997604489326477,
       "intent_correct": true,
-      "entities": []
+      "expected_entities": [
+        {
+          "entity": "disease",
+          "value": "tb"
+        }
+      ],
+      "predicted_entities": [],
+      "entity_true_positive": 0,
+      "entity_false_positive": 0,
+      "entity_false_negative": 1,
+      "entity_correct": false
     },
     {
       "id": 4,
@@ -50,13 +102,29 @@
       "predicted_intent": "prevention",
       "intent_confidence": 0.9997815489768982,
       "intent_correct": true,
-      "entities": [
+      "expected_entities": [
         {
           "entity": "disease",
-          "value": "malaria",
-          "confidence": 0.9996737241744995
+          "value": "malaria"
         }
-      ]
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 15,
+          "end": 22,
+          "confidence_entity": 0.9996737241744995,
+          "value": "malaria",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
     },
     {
       "id": 5,
@@ -65,13 +133,29 @@
       "predicted_intent": "prevention",
       "intent_confidence": 0.999945878982544,
       "intent_correct": true,
-      "entities": [
+      "expected_entities": [
         {
           "entity": "disease",
-          "value": "dengue",
-          "confidence": 0.9995460510253906
+          "value": "dengue"
         }
-      ]
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 0,
+          "end": 6,
+          "confidence_entity": 0.9995460510253906,
+          "value": "dengue",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
     },
     {
       "id": 6,
@@ -80,7 +164,12 @@
       "predicted_intent": "emergency",
       "intent_confidence": 0.9995803236961365,
       "intent_correct": true,
-      "entities": []
+      "expected_entities": [],
+      "predicted_entities": [],
+      "entity_true_positive": 0,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
     }
   ]
 }

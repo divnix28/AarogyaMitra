@@ -2,31 +2,62 @@
   {
     "id": 1,
     "text": "What are dengue symptoms?",
-    "expected_intent": "symptoms"
+    "expected_intent": "symptoms",
+    "expected_entities": [
+      {
+        "entity": "disease",
+        "value": "dengue"
+      }
+    ]
   },
   {
     "id": 2,
     "text": "dengu ke symptoms kya hai?",
-    "expected_intent": "symptoms"
+    "expected_intent": "symptoms",
+    "expected_entities": [
+      {
+        "entity": "disease",
+        "value": "dengu"
+      }
+    ]
   },
   {
     "id": 3,
     "text": "tb ke lakshan batao",
-    "expected_intent": "symptoms"
+    "expected_intent": "symptoms",
+    "expected_entities": [
+      {
+        "entity": "disease",
+        "value": "tb"
+      }
+    ]
   },
   {
     "id": 4,
     "text": "How to prevent malaria?",
-    "expected_intent": "prevention"
+    "expected_intent": "prevention",
+    "expected_entities": [
+      {
+        "entity": "disease",
+        "value": "malaria"
+      }
+    ]
   },
   {
     "id": 5,
     "text": "dengue se kaise bache?",
-    "expected_intent": "prevention"
+    "expected_intent": "prevention",
+    "expected_entities": [
+      {
+        "entity": "disease",
+        "value": "dengue"
+      }
+    ]
   },
   {
     "id": 6,
     "text": "Patient has severe chest pain and cannot breathe",
-    "expected_intent": "emergency"
+    "expected_intent": "emergency",
+    "expected_entities": []
   }
 ]
