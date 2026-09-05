@@ -1,0 +1,86 @@
+{
+  "total_questions": 6,
+  "correct_intents": 6,
+  "incorrect_intents": 0,
+  "intent_accuracy_percent": 100.0,
+  "results": [
+    {
+      "id": 1,
+      "text": "What are dengue symptoms?",
+      "expected_intent": "symptoms",
+      "predicted_intent": "symptoms",
+      "intent_confidence": 0.9998601675033569,
+      "intent_correct": true,
+      "entities": [
+        {
+          "entity": "disease",
+          "value": "dengue",
+          "confidence": 0.9995595216751099
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "dengu ke symptoms kya hai?",
+      "expected_intent": "symptoms",
+      "predicted_intent": "symptoms",
+      "intent_confidence": 0.9999228715896606,
+      "intent_correct": true,
+      "entities": [
+        {
+          "entity": "disease",
+          "value": "dengue",
+          "confidence": 0.9991341829299927
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "tb ke lakshan batao",
+      "expected_intent": "symptoms",
+      "predicted_intent": "symptoms",
+      "intent_confidence": 0.9997604489326477,
+      "intent_correct": true,
+      "entities": []
+    },
+    {
+      "id": 4,
+      "text": "How to prevent malaria?",
+      "expected_intent": "prevention",
+      "predicted_intent": "prevention",
+      "intent_confidence": 0.9997815489768982,
+      "intent_correct": true,
+      "entities": [
+        {
+          "entity": "disease",
+          "value": "malaria",
+          "confidence": 0.9996737241744995
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "dengue se kaise bache?",
+      "expected_intent": "prevention",
+      "predicted_intent": "prevention",
+      "intent_confidence": 0.999945878982544,
+      "intent_correct": true,
+      "entities": [
+        {
+          "entity": "disease",
+          "value": "dengue",
+          "confidence": 0.9995460510253906
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Patient has severe chest pain and cannot breathe",
+      "expected_intent": "emergency",
+      "predicted_intent": "emergency",
+      "intent_confidence": 0.9995803236961365,
+      "intent_correct": true,
+      "entities": []
+    }
+  ]
+}
