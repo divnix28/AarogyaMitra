@@ -1,25 +1,12 @@
-from .message_schema import CommonMessage
+from pydantic import BaseModel, Field
+from typing import Optional
+import datetime
 
-
-def normalize_message(
-    user_id: str,
-    text: str,
-    channel: str,
-    message_id: str = None,
-    timestamp: str = None,
-    phone_number: str = None,
-    language: str = None,
-) -> CommonMessage:
-
-    if not text:
-        raise ValueError("Message text cannot be empty")
-
-    return CommonMessage(
-        user_id=user_id,
-        text=text.strip(),
-        channel=channel,
-        message_id=message_id,
-        timestamp=timestamp,
-        phone_number=phone_number,
-        language=language,
-    )
+class CommonMessage(BaseModel):
+    user_id: str
+    message: str  # Must match Member 1's backend ChatRequest schema
+    channel: str = "whatsapp"
+    message_id: Optional[str] = None
+    timestamp: str = Field(default_factory=lambda: datetime.datetime.now(datetime.timezone.utc).isoformat())
+    phone_number: Optional[str] = None
+    language: str = "en"
