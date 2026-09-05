@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: aarogyamitra_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=development
+      - RASA_URL=http://rasa:5005
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - rasa
+
+  rasa:
+    build:
+      context: ./rasa
+    container_name: aarogyamitra_rasa
+    ports:
+      - "5005:5005"
+    command: ["run", "--enable-api", "--cors", "*"]
