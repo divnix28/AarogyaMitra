@@ -8,7 +8,7 @@ COPY config.yml domain.yml endpoints.yml ./
 COPY data/ ./data/
 COPY actions/ ./actions/
 
-RUN rasa train nlu --config config.yml --domain domain.yml --data data/
+RUN rasa train nlu --config config.yml --domain domain.yml
 
 EXPOSE 5005 5055
 

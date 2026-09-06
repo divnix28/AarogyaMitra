@@ -1,0 +1,175 @@
+{
+  "total_questions": 6,
+  "intent_evaluation": {
+    "correct": 6,
+    "incorrect": 0,
+    "accuracy": 100.0
+  },
+  "entity_evaluation": {
+    "true_positives": 4,
+    "false_positives": 0,
+    "false_negatives": 1,
+    "precision": 100.0,
+    "recall": 80.0,
+    "f1_score": 88.89
+  },
+  "results": [
+    {
+      "id": 1,
+      "text": "What are dengue symptoms?",
+      "expected_intent": "symptoms",
+      "predicted_intent": "symptoms",
+      "intent_confidence": 0.9998601675033569,
+      "intent_correct": true,
+      "expected_entities": [
+        {
+          "entity": "disease",
+          "value": "dengue"
+        }
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 9,
+          "end": 15,
+          "confidence_entity": 0.9995595216751099,
+          "value": "dengue",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
+    },
+    {
+      "id": 2,
+      "text": "dengu ke symptoms kya hai?",
+      "expected_intent": "symptoms",
+      "predicted_intent": "symptoms",
+      "intent_confidence": 0.9999228715896606,
+      "intent_correct": true,
+      "expected_entities": [
+        {
+          "entity": "disease",
+          "value": "dengue"
+        }
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 0,
+          "end": 5,
+          "confidence_entity": 0.9991341829299927,
+          "value": "dengue",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
+    },
+    {
+      "id": 3,
+      "text": "tb ke lakshan batao",
+      "expected_intent": "symptoms",
+      "predicted_intent": "symptoms",
+      "intent_confidence": 0.9997604489326477,
+      "intent_correct": true,
+      "expected_entities": [
+        {
+          "entity": "disease",
+          "value": "tb"
+        }
+      ],
+      "predicted_entities": [],
+      "entity_true_positive": 0,
+      "entity_false_positive": 0,
+      "entity_false_negative": 1,
+      "entity_correct": false
+    },
+    {
+      "id": 4,
+      "text": "How to prevent malaria?",
+      "expected_intent": "prevention",
+      "predicted_intent": "prevention",
+      "intent_confidence": 0.9997815489768982,
+      "intent_correct": true,
+      "expected_entities": [
+        {
+          "entity": "disease",
+          "value": "malaria"
+        }
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 15,
+          "end": 22,
+          "confidence_entity": 0.9996737241744995,
+          "value": "malaria",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
+    },
+    {
+      "id": 5,
+      "text": "dengue se kaise bache?",
+      "expected_intent": "prevention",
+      "predicted_intent": "prevention",
+      "intent_confidence": 0.999945878982544,
+      "intent_correct": true,
+      "expected_entities": [
+        {
+          "entity": "disease",
+          "value": "dengue"
+        }
+      ],
+      "predicted_entities": [
+        {
+          "entity": "disease",
+          "start": 0,
+          "end": 6,
+          "confidence_entity": 0.9995460510253906,
+          "value": "dengue",
+          "extractor": "DIETClassifier",
+          "processors": [
+            "EntitySynonymMapper"
+          ]
+        }
+      ],
+      "entity_true_positive": 1,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
+    },
+    {
+      "id": 6,
+      "text": "Patient has severe chest pain and cannot breathe",
+      "expected_intent": "emergency",
+      "predicted_intent": "emergency",
+      "intent_confidence": 0.9995803236961365,
+      "intent_correct": true,
+      "expected_entities": [],
+      "predicted_entities": [],
+      "entity_true_positive": 0,
+      "entity_false_positive": 0,
+      "entity_false_negative": 0,
+      "entity_correct": true
+    }
+  ]
+}
