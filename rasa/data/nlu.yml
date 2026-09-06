@@ -1,0 +1,86 @@
+version: "3.1"
+
+nlu:
+- intent: greeting
+  examples: |
+    - hi
+    - hello
+    - namaste
+    - नमस्ते
+    - प्रणाम
+    - good morning
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - alvida
+    - अलविदा
+
+- intent: thanks
+  examples: |
+    - thank you
+    - thanks
+    - धन्यवाद
+    - shukriya
+
+- intent: help
+  examples: |
+    - help
+    - madad chahiye
+    - मदद कीजिए
+    - what can you do
+
+- intent: symptoms
+  examples: |
+    - What are the symptoms of [dengue](disease)?
+    - How do I know if I have [malaria](disease)?
+    - [tuberculosis](disease) ke lakshan kya hai?
+    - [dengue](disease) ke symptoms batao
+    - [डेंगू](disease) के क्या लक्षण हैं?
+    - [bukhar](symptom) aur [sir dard](symptom) kis wajah se hota hai
+
+- intent: prevention
+  examples: |
+    - How can I prevent [dengue](disease)?
+    - How to stay safe from [malaria](disease)?
+    - [dengue](disease) se kaise bache?
+    - [मलेरिया](disease) से बचाव के उपाय
+    - Mosquito control methods for [dengue](disease)
+
+- intent: causes
+  examples: |
+    - What causes [dengue](disease)?
+    - Why does [malaria](disease) happen?
+    - [tuberculosis](disease) kyu hota hai?
+    - [डेंगू](disease) होने का क्या कारण है?
+
+- intent: vaccination_information
+  examples: |
+    - Tell me about [polio](vaccine) vaccine
+    - [bcg](vaccine) tika kab lagta hai
+    - [पोलियो](vaccine) का टीका कब लगाना चाहिए?
+
+- intent: government_scheme
+  examples: |
+    - Tell me about [Ayushman Bharat](government_scheme)
+    - [PM-JAY](government_scheme) eligibility
+    - [आयुष्मान भारत](government_scheme) योजना क्या है?
+
+- intent: emergency
+  examples: |
+    - Severe difficulty breathing and unconsciousness
+    - Chest pain and heavy sweating emergency
+    - Bahut Jyada khoon beh raha hai emergency
+    - बहुत तेज़ छाती में दर्द और बेहोशी
+
+- synonym: dengue
+  examples: |
+    - dengu
+    - dengoo
+    - डेंगू
+
+- synonym: malaria
+  examples: |
+    - malariya
+    - मलेरिया

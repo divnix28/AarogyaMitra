@@ -1,0 +1,56 @@
+recipe: default.v1
+language: "mul"
+
+pipeline:
+- name: WhitespaceTokenizer
+  intent_tokenization_flag: true
+  intent_split_symbol: "+"
+
+- name: RegexFeaturizer
+  alias: "regex_features"
+
+- name: LexicalSyntacticFeaturizer
+  alias: "lexical_features"
+
+- name: CountVectorsFeaturizer
+  analyzer: "word"
+  min_ngram: 1
+  max_ngram: 2
+  alias: "word_count_vectors"
+
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 2
+  max_ngram: 5
+  alias: "char_count_vectors"
+
+- name: DIETClassifier
+  epochs: 100
+  ranking_length: 5
+  constrain_similarities: true
+  model_confidence: softmax
+
+- name: EntitySynonymMapper
+
+- name: ResponseSelector
+  epochs: 100
+  constrain_similarities: true
+
+- name: FallbackClassifier
+  threshold: 0.65
+  ambiguity_threshold: 0.10
+
+policies:
+- name: MemoizationPolicy
+  max_history: 5
+
+- name: RulePolicy
+  core_fallback_threshold: 0.65
+  core_fallback_action_name: "action_default_fallback"
+  enable_fallback_prediction: true
+
+- name: TEDPolicy
+  max_history: 8
+  epochs: 100
+  constrain_similarities: true
+assistant_id: 20260904-124903-quadratic-champagne
