@@ -1,30 +1,32 @@
 import sys
 import os
 import datetime
-
-# 1. Add root Aarogyamitra directory to path BEFORE importing external modules
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 from fastapi import FastAPI
-from app.api.routes import chat, auth
+from fastapi.middleware.cors import CORSMiddleware
+from app.api.routes import chat, auth, analytics  # Added analytics here
 from app.database.connection import engine
 from app.models.learning import Base
-from app.api.routes import chat
 from channel_adaptor.Whatsapp.webhook import router as whatsapp_router
 
-# 2. Initialize the FastAPI app first
 app = FastAPI(
     title="AarogyaMitra AI Core Backend",
     description="Central orchestration layer for the AarogyaMitra AI ecosystem.",
     version="0.1.0"
 )
 
+# Crucial for Member 6: Allows frontend (React/Vue) to make API calls to this backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 Base.metadata.create_all(bind=engine)
 
-# 3. Mount routers after the app is created
 app.include_router(chat.router, prefix="/api/v1/chat", tags=["chat"])
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
-
-@app.get("/health")
-async def health_check():
-    return {"status": "healthy", "timestamp": datetime.datetime.now(datetime.timezone.utc)}
+app.include_router(analytics.router, prefix="/api/v1/analytics", tags=["analytics"]) # Mount new route
